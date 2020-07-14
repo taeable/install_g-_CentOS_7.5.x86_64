@@ -1,0 +1,14 @@
+vi /etc/sysconfig/network-scrpts/ifcfg-enp0s3
+
+##write to ifcfg-enp0s3
+DEVICE=enp3s0
+ONBOOT=yes
+DHCP=yes
+
+##restart network##
+$ifdown enp0s3
+ifup enp0s3
+
+
+##check##
+ping 192.168.1.1
